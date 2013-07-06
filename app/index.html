@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8" />
     <title>Angular Notes</title>
+    <link href="components/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="components/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
 </head>
 <body ng-app="ngExampleApp">
-  <div class="container" ng-view></div> 
-  <script src="app/components/angular/angular.js></script>
+  <div class="container-fluid">
+    <h1>Angular Notes</h1>
+    <hr>
+    <div ng-view></div>
+  </div> 
+
+  <script src="components/angular/angular.js"></script>
+  <script src="components/bootstrap/docs/assets/js/bootstrap.js"></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/notes.js"></script>
+  <script src="scripts/services/models/note.js"></script>
+  <script src="scripts/directives/note.js"></script>
 </body>
 </html>
