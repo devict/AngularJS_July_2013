@@ -3,7 +3,6 @@
 
 app.controller('NotesCtrl', function ($scope) {
   //$scope.allNotes = NoteModel.notes();
-  window.scope = $scope;
   $scope.allNotes = [
     {
       'title': 'Meeting Notes Dev Staff 6/28',
@@ -30,4 +29,10 @@ app.controller('NotesCtrl', function ($scope) {
       'archived': false
     }
   ];
+
+  //$scope.currentNote = '';
+
+  $scope.newNote = function () {
+
+  };
 });

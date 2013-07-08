@@ -6,15 +6,17 @@
     <link href="components/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
     <link href="components/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
 </head>
-<body ng-app="ngExampleApp">
+<body data-ng-app="ngExampleApp">
   <div class="container-fluid">
-    <h1>Angular Notes</h1>
-    <hr>
-    <div ng-view></div>
+    <div data-ng-view class="row-fluid"></div>
   </div> 
 
+  <!-- Components -->
   <script src="components/angular/angular.js"></script>
+  <script src="components/jquery/jquery.js"></script>
   <script src="components/bootstrap/docs/assets/js/bootstrap.js"></script>
+
+  <!-- My stuff -->
   <script src="scripts/app.js"></script>
   <script src="scripts/controllers/notes.js"></script>
   <script src="scripts/services/models/note.js"></script>

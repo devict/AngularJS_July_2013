@@ -1,4 +1,20 @@
+<h1>Angular Notes</h1>
+<hr>
 <div id="notes" data-ng-controller="NotesCtrl">
-  <note data-ng-repeat="note in allNotes" data-note="note"></note>
+  <nav class="span3">
+    <ul class="nav nav-list well">
+      <li data-ng-repeat="note in allNotes"><a href="#">{{note.title}}</a></li> 
+    </ul>
+    <button class="btn btn-success" data-ng-click="newNote()">New Note</button>
+  </nav>
+
+  <div class="span9">
+    <div class="note">
+      <h3>{{note.title}}</h3>
+      <div class="note-body">{{note.title}}</div>
+      <br>
+      <div class="note-tags"><small><strong>Tags:</strong> {{note.tags}}</small></div>
+      <hr>
+    </div>
+  </div>
 </div>
-<button class="btn btn-success" data-ng-click="newNote()">New Note</button>
