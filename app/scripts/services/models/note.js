@@ -6,10 +6,10 @@ app.factory('NoteModel', function () {
     notes: [],
     save: function (note) {
       this.notes.push(note);
+      localStorage.setItem('angular-notes', JSON.stringify(this.notes));
     },
     load: function () {
-      // load the notes array from localStorage
-      // TODO: check limits of localstorage item length
+      this.notes = JSON.parse(window.localStorage.getItem('angular-notes'));
     }
   };
 });
