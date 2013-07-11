@@ -3,18 +3,27 @@
 <div id="notes" data-ng-controller="NotesCtrl">
   <nav class="span3">
     <ul class="nav nav-list well">
-      <li data-ng-repeat="note in allNotes"><a href="#">{{note.title}}</a></li> 
+      <li data-ng-repeat="note in allNotes">
+        <a data-ng-click="selectNote(note.id)">{{note.title}}</a>
+      </li> 
     </ul>
-    <button class="btn btn-success" data-ng-click="newNote()">New Note</button>
+    <br>
+    <div class="row-fluid">
+      <button class="span12 btn btn-primary" data-ng-click="newNote()">New Note</button>
+    </div>
   </nav>
 
   <div class="span9">
-    <div class="note">
-      <h3>{{note.title}}</h3>
-      <div class="note-body">{{note.title}}</div>
+    <div class="note row-fluid">
+      <input type="text" data-ng-model="currentNote.title" class="span12" id="note-title">
+      <textarea data-ng-model="currentNote.body" class="note-body span12"></textarea>
       <br>
-      <div class="note-tags"><small><strong>Tags:</strong> {{note.tags}}</small></div>
-      <hr>
+      <div class="note-tags">
+        <strong><small>Tags:</small></strong>
+        <br>
+        <input type="text" placeholder="tags" data-ng-model="currentNote.tags" class="span12">
+      </div>
+      <button class="btn btn-success pull-right" data-ng-click="saveNote()">Save Note</button>
     </div>
   </div>
 </div>
