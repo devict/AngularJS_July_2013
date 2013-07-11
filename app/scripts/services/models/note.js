@@ -12,12 +12,17 @@ app.factory('NoteModel', function () {
       this.notes[id] = note;
       this.sync();
     },
-    delete: function (idx) {
+    del: function (idx) {
       this.notes.splice(idx, 1);
       this.sync();
     },
     load: function () {
-      this.notes = JSON.parse(window.localStorage.getItem('angular-notes'));
+      var localStorageNotes = JSON.parse(window.localStorage.getItem('angular-notes'));
+      if (localStorageNotes !== null) {
+        this.notes = localStorageNotes;
+      } else {
+        this.notes = [];
+      }
     },
     sync: function () {
       _.each(this.notes, function (note, idx, list) {
