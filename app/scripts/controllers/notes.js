@@ -32,7 +32,7 @@ app.controller('NotesCtrl', function ($scope, $routeParams, $location, NoteModel
 
   $scope.deleteNote = function (id) {
     if (id !== null) { NoteModel.del(id); }
-    $location.path('/notes/new');
+    if (id === $scope.currentNote.id) { $location.path('/notes/new'); }
   };
 
   $scope.selectNote = function (id) {
