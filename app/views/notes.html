@@ -2,8 +2,9 @@
 <hr>
 <div id="notes" data-ng-controller="NotesCtrl">
   <nav class="span3">
+    <input type="text" data-ng-model="searchText" id="search" class="span12" placeholder="Search">
     <ul class="nav nav-list well">
-      <li data-ng-repeat="note in allNotes">
+      <li data-ng-repeat="note in allNotes | filter:searchText">
         <a data-ng-click="deleteNote(note.id)" class="pull-right"><i class="icon-trash"></i></a>
         <a data-ng-click="selectNote(note.id)">{{note.title}}</a>
       </li> 
