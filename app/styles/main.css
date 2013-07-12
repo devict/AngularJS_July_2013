@@ -1,3 +1,7 @@
-.note-body {
-  height: 500px;
+#note-title {
+  font-size: 2em;
+  height: auto;
+}
+#note-body {
+  height: 400px;
 }
