@@ -21,5 +21,3 @@ Binds input value to data source value, both ways
 ## How does it work?
 
 Mass event watching
-
-**(get more data)**

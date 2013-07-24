@@ -1,3 +1,5 @@
 # Thank you!
 
-## #upfrontwichita // upfrontwichita.com
+## freenode @ #upfrontwichita
+
+## http://upfrontwichita.com
