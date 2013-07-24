@@ -12,8 +12,15 @@ app.controller('NotesCtrl', function ($scope, $routeParams, $location, NoteModel
 
   // which note is being editted
   if (noteId !== 'new') {
-    $scope.currentNote = $scope.allNotes[noteId];
+    $scope.btnDisabled = '';
+    if ($scope.allNotes[noteId]) {
+      $scope.currentNote = $scope.allNotes[noteId];
+      $scope.currentNote.class = 'active';
+    } else {
+      $location.path('/notes/new');
+    }
   } else {
+    $scope.btnDisabled = 'disabled';
     $scope.currentNote = $scope.blankNote;
   }
 

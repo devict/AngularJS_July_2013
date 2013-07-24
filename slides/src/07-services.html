@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Angular Example</title>
+</head>
+<body ng-app="myApp">
+
+  <div ng-controller="myCtrl">
+
+  </div>
+  
+  <script src="lib/angular/angular.js"></script>
+  <script>
+    var app = angular.module('myApp', []);
+
+    app.controller('myCtrl', function ($http, $rootElement) {
+      
+      $http({ method: 'GET', url: '/slides/src/data.json' })
+        .success(function (data, status, headers) {
+          $rootElement.append('Status: ' + status);
+          $rootElement.append('<br><br>');
+          $rootElement.append(data.myVar);
+        });
+
+    });
+  </script>
+</body>
+</html>
