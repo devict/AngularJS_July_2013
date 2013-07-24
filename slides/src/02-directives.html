@@ -6,12 +6,20 @@
 <body>
 
   <div ng-app="myApp">
-    <!-- angular app content -->
+    <button my-directive>Click!</button>
   </div>
   
   <script src="lib/angular/angular.js"></script>
   <script>
-    angular.module('myApp', []);
+    var app = angular.module('myApp', []);
+
+    app.directive('myDirective', function() {
+
+      return function (scope, element, attrs) {
+        element.bind('click', function() { alert('click!') });
+      };
+
+    });
   </script>
 </body>
 </html>

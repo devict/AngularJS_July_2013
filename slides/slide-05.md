@@ -17,3 +17,18 @@ Base functionality already available.
     <div ng-app="MyApp"></div>
 
 Declares the active area of our application.
+
+
+## Creating your own Directives
+
+    <button my-directive>Click!</button>
+----
+    app.directive('myDirective', function() {
+
+      return function (scope, element, attrs) {
+        element.bind('click', function() { alert('click!') });
+      };
+
+    });
+
+Notice the camelcase to hypenated name conversion
