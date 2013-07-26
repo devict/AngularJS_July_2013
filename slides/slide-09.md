@@ -1,31 +1,29 @@
-# Routing & Views
+# Dependency Injection
 
-**Routing**: Simluating browser navigation
-
-**Views**: Keeping module specific markup separated
+Getting only what you need
 
 
-## Routing services
+## What's the benefit?
 
-$route, $routeProvider, $routeParams, $location
-
-
-## ng-view directive
-
-Where the view content for a route will be loaded
-
-    <div ng-view></div>
+- Influences modular design
+- Much easier to test
 
 
-## Configuring routes
+## How does it work?
 
-Specify route with associated controller and view file/string
+Pass dependencies into callback function for app pieces
 
-    app.config(function ($routeProvider) {
+(controllers, directives, etc..)
+
+    app.controller('myCtrl', function ($scope, $location) {
       
-      $routeProvider.when('/books', {
-        controller  : 'BooksCtrl',
-        templateUrl : 'books.html'
-      });
+      // $scope and $location objects available
 
     });
+
+
+## Read more?
+
+Angular docs -- http://docs.angularjs.org/guide/di
+
+DailyJS -- http://dailyjs.com/2013/05/23/angularjs-injection/

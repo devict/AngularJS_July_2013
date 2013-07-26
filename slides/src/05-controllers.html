@@ -10,6 +10,11 @@
       <input type="text" ng-model="myVar">
       <p><strong>myVar: </strong>{{ myVar }}</p>
       <input type="text" ng-model="myVar">
+
+      <ul>
+        <li ng-repeat="el in myArr">{{ el }}</li>
+      </ul>
+
       <button ng-click="myFunc()">Click!</button>
     </div>
   </div>
@@ -21,6 +26,8 @@
     app.controller('myCtrl', function ($scope) {
 
       $scope.myVar = "Hello World!";
+
+      $scope.myArr = ['one', 'two', 'three'];
 
       $scope.myFunc = function () {
         alert('myVar = ' + $scope.myVar);

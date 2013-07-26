@@ -12,13 +12,30 @@
     var app = angular.module('myApp', []);
 
     app.config(function ($routeProvider) {
+
       $routeProvider.when('/', {
         controller : 'myCtrl',
-        template   : '<p>{{ myVar }}</p>'
+        template   : '<button ng-click="go()">{{ myVar }}</button>'
       });
+
+      $routeProvider.when('/two', {
+        controller : 'twoCtrl',
+        template   : '<h1>{{ myVar }}</h1>'
+      });
+
     });
 
     app.controller('myCtrl', function ($scope, $location) {
+
+      $scope.myVar = 'Go to the next page!';
+
+      $scope.go = function () {
+        $location.path('/two');
+      };
+
+    });
+
+    app.controller('twoCtrl', function ($scope, $location) {
 
       $scope.myVar = 'Hello world!';
 

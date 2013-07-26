@@ -16,8 +16,3 @@ Binds input value to data source value, both ways
 
     <input type="text" ng-model="myVar">
     <p>{{ myVar }}</p>
-
-
-## How does it work?
-
-Mass event watching

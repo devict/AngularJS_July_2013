@@ -1,5 +1,9 @@
-# Thank you!
+# Angular Notes
+## Example Application
 
-## freenode @ #upfrontwichita
 
-## http://upfrontwichita.com
+## Features
+
+- Notes with title, body, and tags
+- Create, save, update, delete
+- Search to filter

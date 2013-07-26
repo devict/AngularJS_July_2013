@@ -1,9 +1,34 @@
-# Angular Notes
-## Example Application
+# Services
+
+Helpers, plugins, plus anything else
 
 
-## Features
+## Angular Services
 
-- Notes with title, body, and tags
-- Create, save, update, delete
-- Search to filter
+$http, $resource, $log, $rootElement, $exceptionHandler, $location, $routeParams, $timeout
+
+
+## Using Services
+
+Inject what you need as a dependency where you need it
+
+    app.controller('myCtrl', function ($http, $log) {
+      
+      $http({ method: 'GET', url: 'someUrl' })
+        .success(function (data, status, headers) {
+          $log.log('Status: ' + status + '\n\n' + data);
+        });
+
+    });
+
+
+## Creating your own
+
+    app.factory('MyService', function() {
+
+      return {
+        data: {},
+        someFunc: function () {}
+      };
+
+    });

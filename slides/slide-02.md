@@ -1,12 +1,13 @@
 # What is AngularJS?
 
-- MVC framework for creating client-side apps
-  - Model View Controller (sorta)
+Client-side framework for creating complex web apps
 
-- Good for SPA's (Single Page Applications)
 
-- Competitor for other front-end frameworks
-  - Backbone.js
-  - Ember.js
+# Competitor to Backbone, Ember
 
-- Very different and interesting approach.
+Also very different from both.
+
+
+# MVC Framework
+
+Model, view, controller

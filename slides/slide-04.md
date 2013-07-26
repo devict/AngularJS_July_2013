@@ -1,12 +1,14 @@
 # Getting Started
 
-https://github.com/angular/angular.js
+
+## Include the source
 
     <script src="lib/angular.js"></script>
 
 
-# Using Bower
+## Ways to get source
 
-Client-side package manager, powered by node.js.
+http://angularjs.org
+http://github.com/angular/angular.js
 
     $ bower install angular

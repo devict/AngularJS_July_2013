@@ -1,29 +1,53 @@
-# Dependency Injection
+# Controllers
 
-Getting only what you need
-
-
-## What's the benefit?
-
-- Influences modular design
-- Much easier to test
+Organizing the piecs of your app
 
 
-## How does it work?
+## Declaring a controller
 
-Pass dependencies into callback function for app pieces
+    <div ng-app="myApp">
+      <div ng-controller="myCtrl"></div>
+    </div>
+----
+    app.controller('myCtrl', function ($scope) {
 
-(controllers, directives, etc..)
-
-    app.controller('myCtrl', function ($scope, $location) {
-      
-      // $scope and $location objects available
+      // Controller code..
 
     });
 
 
-## Read more?
+## What does it control?
 
-Angular docs -- http://docs.angularjs.org/guide/di
+Everything inside the assigned DOM element
 
-DailyJS -- http://dailyjs.com/2013/05/23/angularjs-injection/
+
+## Controller scope
+
+Attached to scope, available to the DOM
+
+    <div ng-controller="myCtrl">
+      {{ myVar }}
+    </div>
+----
+    app.controller('myCtrl', function ($scope) {
+
+      $scope.myVar = "Hello World!";
+
+    });
+
+
+## Functions too!
+
+    <div ng-controller="myCtrl">
+      <button ng-click="myFunc()">Click!</button>
+    </div>
+----
+    app.controller('myCtrl', function ($scope) {
+
+      $scope.myFunc = function () {
+        alert('Hello world!');
+      };
+
+    });
+
+**note**: ng-click directive!

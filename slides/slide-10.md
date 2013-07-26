@@ -1,22 +1,31 @@
-# Services
+# Routing & Views
 
-Helpers, plugins, plus anything else
+**Routing**: Simluating browser navigation
 
-
-## Angular Services
-
-$http, $resource, $log, $rootElement, $exceptionHandler, $location, $routeParams, $timeout
+**Views**: Keeping module specific markup separated
 
 
-## Using Services
+## Routing services
 
-Inject what you need as a dependency where you need it
+$route, $routeProvider, $routeParams, $location
 
-    app.controller('myCtrl', function ($http, $log) {
+
+## ng-view directive
+
+Where the view content for a route will be loaded
+
+    <div ng-view></div>
+
+
+## Configuring routes
+
+Specify route with associated controller and view file/string
+
+    app.config(function ($routeProvider) {
       
-      $http({ method: 'GET', url: 'someUrl' })
-        .success(function (data, status, headers) {
-          $log.log('Status: ' + status + '\n\n' + data);
-        });
+      $routeProvider.when('/books', {
+        controller  : 'BooksCtrl',
+        templateUrl : 'books.html'
+      });
 
     });
